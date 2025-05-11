@@ -1,0 +1,36 @@
+﻿<Window x:Class="AcademyWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Academy WPF" Height="450" Width="800">
+	<DockPanel>
+		<StatusBar DockPanel.Dock="Bottom">
+			<TextBlock Name="StatusBarText" Text="Количество записей: 0" />
+		</StatusBar>
+		<TabControl Name="MainTabControl" SelectionChanged="MainTabControl_SelectionChanged">
+			<TabItem Header="Students">
+				<DockPanel>
+					<StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+						<ComboBox Name="StudentsGroupComboBox" Width="200" SelectionChanged="ComboBox_SelectionChanged" />
+						<ComboBox Name="StudentsDirectionComboBox" Width="200" SelectionChanged="ComboBox_SelectionChanged" />
+					</StackPanel>
+					<DataGrid Name="StudentsDataGrid" AutoGenerateColumns="True" />
+				</DockPanel>
+			</TabItem>
+			<TabItem Header="Groups">
+				<DockPanel>
+					<ComboBox Name="GroupsDirectionComboBox" Width="200" DockPanel.Dock="Top" SelectionChanged="ComboBox_SelectionChanged" />
+					<DataGrid Name="GroupsDataGrid" AutoGenerateColumns="True" />
+				</DockPanel>
+			</TabItem>
+			<TabItem Header="Directions">
+				<DataGrid Name="DirectionsDataGrid" AutoGenerateColumns="True" />
+			</TabItem>
+			<TabItem Header="Disciplines">
+				<DataGrid Name="DisciplinesDataGrid" AutoGenerateColumns="True" />
+			</TabItem>
+			<TabItem Header="Teachers">
+				<DataGrid Name="TeachersDataGrid" AutoGenerateColumns="True" />
+			</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>
